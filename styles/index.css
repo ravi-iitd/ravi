@@ -1,0 +1,201 @@
+/*========== Variables ==============*/
+/*========== General Formatting and Typography =========*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #181818;
+}
+
+li{
+  text-align: justify;
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  background-image: linear-gradient(to right, #1b3880, #16768c);
+  color: #fff;
+}
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+header .subtitle {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+h2 {
+  color: #1b3880;
+  margin-bottom: 0;
+}
+summary{
+  list-style-position: outside;
+}
+summary{
+  margin: 4px;
+  border-radius: 20px;
+  border-image-source: linear-gradient(to bottom, #fc8312, #16768c, #1b3880) !important;
+  border-width: 2px !important;
+  border-image-slice: 1;
+  border-style: solid;
+  /* border-image:     linear-gradient(      to bottom,       red,       rgba(0, 0, 0, 0)    ) 1 100%; */
+}
+p,
+ul,
+li {
+  line-height: 1.7;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #16768c;
+}
+
+main h3 {
+  margin: 0.5em 0;
+}
+main h4 {
+  margin: 0.5em 0 0.5em 1em;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+/* Mixin and styles for containers */
+.header-container {
+  background-color: linear-gradient(to right, #1b3880, #16768c);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  grid-area: header;
+}
+
+.main-container {
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.aside-container {
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4em;
+}
+
+/*========= Accents and touch ups ========*/
+.accent-gradient::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, #fc8312, #16768c, #1b3880);
+}
+
+/*======== Card styling ============*/
+.card,
+.cert-card {
+  margin-bottom: 0.75em;
+}
+
+.card-main,
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+}
+
+.cert-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  align-items: baseline;
+}
+.cert-card h4 {
+  grid-column: 3/-1;
+  text-align: right;
+}
+
+.cert-card-content {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.cert-card-content p {
+  margin-top: 0;
+}
+
+.contact-card {
+  margin-bottom: 0.85em;
+}
+
+/*==== Skill Section ====*/
+.skill-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.skill {
+  background-color: #1b3880;
+  margin: 1em 0.5em 0;
+  padding: 0.3em 1em;
+  border: 1px solid #16768c;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+/*=========Media Query - Break Point ===========*/
+@media (min-width: 700px) {
+  main {
+    display: grid;
+    grid-template-columns: auto repeat(2, minmax(200px, 350px)) minmax(100px, 300px) auto;
+  }
+
+  .main-container {
+    grid-column: 2/4;
+  }
+/* 
+  .aside-container {
+    grid-column: 4/span 1;
+    grid-row: 2/4;
+  } */
+/* 
+  .contact {
+    order: -1;
+  } */
+}
+/* 
+.aside-container{
+  right: 10%;
+  position: fixed;
+  top: 20%;
+  grid-column: 3/4;
+} */
